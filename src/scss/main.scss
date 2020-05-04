@@ -1,0 +1,85 @@
+
+.mainContent {
+  overflow: hidden;
+  .mainContentWrapper {
+    display: flex;
+    height: 100vh;
+    .leftSide {
+      cursor: url(../images/planet.png), auto;
+      max-width: 300px;
+      flex:1;
+      background-image: url("../images/bg.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      color:white;
+      padding:25px;
+      background-position-x: 35%;
+      animation: bganimate 5s linear infinite;
+      -webkit-animation: bganimate 5s linear infinite; /* Safari 4+ */
+      -moz-animation:    bganimate 5s linear infinite; /* Fx 5+ */
+      -o-animation:      bganimate 5s linear infinite; /* Opera 12+ */
+      .profilePicture {
+        width:100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        .radiusImage {
+          border-radius: 100%;
+          height: 150px;
+          width: 150px;
+          overflow: hidden;
+          border:2.5px solid #ffffff;
+          animation: flashbang 1.5s linear infinite;
+          -webkit-animation: flashbang 1.5s linear infinite; /* Safari 4+ */
+          -moz-animation:    flashbang 1.5s linear infinite; /* Fx 5+ */
+          -o-animation:      flashbang 1.5s linear infinite; /* Opera 12+ */
+          img {
+            max-width:100%;
+            height: auto;
+          }
+        }
+      }
+      .profileTitles {
+        text-align: center;
+        margin-top:25px;
+        .name {
+          font-weight: 500;
+          font-size:32px;
+          text-shadow: 2px 2px 12px #a0267ebf;
+        }
+        .title {
+          font-weight: 300;
+          font-size:15px;
+          margin-top:5px;
+        }
+      }
+      .socialPlatforms {
+        display: flex;
+        justify-content: center;
+        margin-top:50px;
+        ul {
+          padding:0;
+          margin:0;
+          display: flex;
+          li {
+            list-style: none;
+            margin-right:10px;
+            &:last-child{
+              margin-right:0;
+            }
+            a {
+              display: block;
+              i {
+                color:white;
+                font-size:26px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .rightSide {
+      flex:2;
+    }
+  }
+}
