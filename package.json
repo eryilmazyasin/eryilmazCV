@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Yasin Eryılmaz CV Web Template",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "lodash.template": "^4.5.0"
+  },
   "devDependencies": {
     "browser-sync": "^2.26.3",
     "gulp": "^3.9.1",
