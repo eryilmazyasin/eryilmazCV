@@ -12,7 +12,7 @@
       background-image: url("../images/bg.jpg");
       background-size: cover;
       background-repeat: no-repeat;
-      color:white;
+      color:$default_color;
       padding:25px;
       background-position-x: 35%;
       animation: bganimate 5s linear infinite;
@@ -46,7 +46,6 @@
         .name {
           font-weight: 500;
           font-size:32px;
-          text-shadow: 2px 2px 12px #a0267ebf;
         }
         .title {
           font-weight: 300;
@@ -72,8 +71,11 @@
             a {
               display: block;
               i {
-                color:white;
+                color:$default_color;
                 font-size:26px;
+                &:hover {
+                  text-shadow: 0px 0px 12px #a0267ebf;
+                }
               }
             }
           }
@@ -91,6 +93,48 @@
     }
     .rightSide {
       flex:2;
+      background: linear-gradient(57deg, rgba(47,47,47,1) 0%, rgba(0,0,0,1) 100%);
+      color:$default_color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .profileSummary {
+        width: 100%;
+        height: 100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        .infoBoxesWrapper {
+          display:flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          width:50%;
+          @include respond-below(1367px){
+            width:60%;
+          }
+          .infoBoxes {
+            border: 3px solid $default_color;
+            min-width: calc(50% - 10px);
+            text-align: center;
+            margin: 5px;
+            color:$default_color;
+            text-decoration: none;
+            font-size:1.5vw;
+            font-weight: 400;
+            letter-spacing: 10px;
+            transition: font-weight, font-size ease .5s;
+            min-height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:hover {
+              background: url(../images/boxesBackground.png) no-repeat center center;
+              background-size: cover;
+              font-weight: bold;
+            }
+          }
+          }
+        }
+      }
     }
   }
-}
