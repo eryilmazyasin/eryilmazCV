@@ -1,11 +1,22 @@
 $(function () {
 
+
+    var linkclickable = true;
+
     $('.infoBoxes').on('click', function (e) {
         e.preventDefault();
-        var page_id = $(this).attr('data-name');
-        $('.' + page_id).addClass('active');
-        $('.profileSummary').hide();
-        $('.' + page_id).show();
+        if(linkclickable){
+            linkclickable = false;
+            var page_id = $(this).attr('data-name');
+            $('.profileSummary').find('.active').slideUp(900, function () {
+                $('.profileSummary').find('.active').removeClass('active');
+                $('.' + page_id).slideDown(900, function () {
+                   $('.' + page_id).addClass('active');
+                    linkclickable = true;
+                });
+            });
+        }
+
     })
 
 })
