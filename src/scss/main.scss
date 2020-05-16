@@ -104,27 +104,28 @@
         height: 100%;
         display:flex;
         justify-content:center;
-        align-items:center;
+        align-items:flex-start;
         .infoBoxesWrapper {
           display:flex;
           flex-direction: row;
           flex-wrap: wrap;
-          width:50%;
-          @include respond-below(1367px){
-            width:60%;
+          width:75%;
+          margin:25px 0 0 0;
+          @include respond-below(lg){
+            width:90%;
           }
           .infoBoxes {
             border: 3px solid $default_color;
-            min-width: calc(50% - 10px);
+            min-width: calc(25% - 10px);
             text-align: center;
-            margin: 5px;
+            margin: 0 5px;
             color:$default_color;
             text-decoration: none;
-            font-size:1.5vw;
+            font-size:1vw;
             font-weight: 400;
             letter-spacing: 10px;
             transition: font-weight, font-size ease .5s;
-            min-height: 120px;
+            padding:25px 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -132,6 +133,10 @@
               background: url(../images/boxesBackground.png) no-repeat center center;
               background-size: cover;
               font-weight: bold;
+            }
+            @include respond-below(md){
+              border-width:1px;
+              letter-spacing: 5px;
             }
           }
           }
