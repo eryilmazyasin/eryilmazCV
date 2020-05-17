@@ -4,6 +4,10 @@
   .mainContentWrapper {
     display: flex;
     height: 100vh;
+    @include respond-below(md){
+      flex-direction: column;
+      height: auto;
+    }
     .leftSide {
       position: relative;
       cursor: url(../images/planet.png), auto;
@@ -19,6 +23,10 @@
       -webkit-animation: bganimate 5s linear infinite; /* Safari 4+ */
       -moz-animation:    bganimate 5s linear infinite; /* Fx 5+ */
       -o-animation:      bganimate 5s linear infinite; /* Opera 12+ */
+      @include respond-below(md){
+        max-width: 100%;
+        width:100%;
+      }
       .profilePicture {
         width:100%;
         height: auto;
@@ -130,6 +138,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            &.activeLink {
+              background:red;
+            }
             &:hover {
               background: url(../images/boxesBackground.png) no-repeat center center;
               background-size: cover;
@@ -139,6 +150,12 @@
               border-width:1px;
               letter-spacing: 5px;
             }
+            @include respond-below(sm){
+              margin: 5px;
+              font-size: 14px;
+              padding: 10px 0;
+              min-width: calc(50% - 10px);
+            }
           }
           }
         }
@@ -147,6 +164,77 @@
       }
       .projects {
         display: none;
+        overflow-y: auto;
+        height: 100%;
+        width:100%;
+        .projectsContent {
+          display: flex;
+          flex-wrap: wrap;
+          width:100%;
+          padding:15px;
+          .projectSingle {
+            width:calc(25% - 10px);
+            margin:15px 5px;
+            @include respond-below(1200px){
+              width:calc(33.333% - 10px);
+            }
+            @include respond-below(md){
+              width:calc(50% - 10px);
+            }
+            .singleImage {
+              position: relative;
+              overflow: hidden;
+              .visitWebsite {
+                background: #000000a6;
+                position: absolute;
+                width: 100%;
+                top: 0;
+                height: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity:0;
+                transition:all cubic-bezier(0, 0.99, 0.58, 1) .5s;
+                a {
+                  color: #fff;
+                  text-decoration: none;
+                  font-weight: 500;
+                  font-size: 14px;
+                  background: #281c3c;
+                  padding: 15px 35px;
+                  border-radius: 20px;
+                  letter-spacing: 5px;
+                  border:2px solid #d0d0d0;
+                  transition: transform ease .5s;
+                  @include respond-below(1400px){
+                    padding: 10px 25px;
+                    font-size:10px;
+                  }
+                  @include respond-below(md){
+                    padding: 10px 25px;
+                    font-size:10px;
+                  }
+                  &:hover {
+                    transform: translateY(-5px);
+                  }
+                }
+              }
+              &:hover {
+                .visitWebsite {
+                  height: 100%;
+                  opacity:1;
+                }
+
+              }
+            }
+            .projectTitle {
+              text-align: center;
+              font-size: 18px;
+              text-transform: uppercase;
+              margin: 10px 0 0 0;
+            }
+          }
+        }
       }
       .personel {
         display: none;

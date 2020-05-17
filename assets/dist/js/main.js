@@ -8,9 +8,9 @@ $(function () {
         if(linkclickable){
             linkclickable = false;
             var page_id = $(this).attr('data-name');
-            $('.profileSummary').find('.active').slideUp(900, function () {
+            $('.profileSummary').find('.active').slideUp(450, function () {
                 $('.profileSummary').find('.active').removeClass('active');
-                $('.' + page_id).slideDown(900, function () {
+                $('.' + page_id).slideDown(450, function () {
                    $('.' + page_id).addClass('active');
                     linkclickable = true;
                 });
