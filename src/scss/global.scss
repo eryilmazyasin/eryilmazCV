@@ -99,8 +99,17 @@ select {
   100% {background-position-x: 35%;}
 }
 
+.pageContainer {
+  width: 100%;
+  padding-top: 25px;
+  @include respond-below(md){
+    padding-top:10px;
+  }
+}
+
 $leftSideColor : #868686;
 $default_color: #E6E6FA;
 $link_active: #f1e05a;;
 
 $projectBoxColor: #141517;
+
