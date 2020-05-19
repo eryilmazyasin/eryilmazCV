@@ -20,8 +20,9 @@ $(function () {
 
     $('.infoBoxesWrapper li').on( 'click', function() {
         //set time out ver
-        $(this).parent().find( 'li.active-li' ).removeClass( 'active-li' );
-        $( this ).addClass( 'active-li' );
+            linkclickable = false;
+            $(this).parent().find( 'li.active-li' ).removeClass( 'active-li' );
+            $( this ).addClass( 'active-li' );
     });
 
 

@@ -1,0 +1,81 @@
+.projects {
+  display: none;
+  overflow-y: auto;
+  height: 100%;
+  width:100%;
+  .projectsContent {
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+    margin:0 auto;
+    padding-top:25px;
+    @include respond-below(md){
+      padding-top:10px;
+    }
+    .projectSingle {
+      background: $projectBoxColor;
+      border:1px solid #5d5d5d;
+      padding:25px;
+      margin:0 5px 10px 5px;
+      color:$default_color;
+      width: calc(33.333% - 10px);
+      @include respond-below(1400px){
+        width: calc(50% - 10px);
+      }
+      @include respond-below(md){
+        padding: 10px;
+        margin:0 2.5px 5px 2.5px;
+        width: calc(50% - 5px);
+      }
+      .projectTitle {
+        a {
+          color : #f1e05a;
+          text-decoration: none;
+          font-weight: 500;
+          &:hover {
+            text-decoration: underline;
+          }
+          @include respond-below(md){
+            font-size:2.8vw
+          }
+        }
+      }
+      .projectDescription {
+        margin:20px 0 40px 0;
+        font-size: 15px;
+        font-weight: 300;
+        @include respond-below(md){
+          font-size:2.6vw
+        }
+      }
+      .projectTech {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .projectColor {
+          display: inline-block;
+          width:15px;
+          height: 15px;
+          border-radius: 50%;
+          &.purple {
+            background:#563D7C;
+          }
+          &.orange {
+            background:#F16529;
+          }
+          &.yellow {
+            background: #F1E05A;
+          }
+
+        }
+        .projectLang{
+          margin-left:5px;
+          font-size:14px;
+          @include respond-below(md){
+            font-size:12px;
+          }
+        }
+      }
+    }
+  }
+}

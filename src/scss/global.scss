@@ -66,7 +66,25 @@ textarea,
 select {
   font: inherit;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 @keyframes flashbang {
   0%   {border-color: #fcfcfc; box-shadow:0 0 10px 0px white;}
   25%  {border-color: #f9f9f9;}
@@ -83,5 +101,6 @@ select {
 
 $leftSideColor : #868686;
 $default_color: #E6E6FA;
+$link_active: #f1e05a;;
 
 $projectBoxColor: #141517;

@@ -114,16 +114,16 @@
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
+        padding:25px;
+        @include respond-below(md){
+          padding:5px;
+        }
         .infoBoxesWrapper {
           display:flex;
           flex-direction: row;
           flex-wrap: wrap;
-          width:75%;
-          margin:25px 0 0 0;
+          width:100%;
           justify-content: center;
-          @include respond-below(lg){
-            width:90%;
-          }
           ul {
             padding:0;
             margin:0;
@@ -158,6 +158,7 @@
                 text-decoration: none;
                 display: flex;
                 padding:15px;
+                font-weight: 500;
                 @include respond-below(md){
                   padding:7px;
                 }
@@ -188,7 +189,10 @@
                 }
               }
               @include respond-below(md){
-                font-size:12px;
+                font-size:14px;
+              }
+              @include respond-below(321px){
+                font-size:11px;
               }
             }
           }
@@ -196,69 +200,6 @@
         }
       .about {
         display: block;
-      }
-      .projects {
-        display: none;
-        overflow-y: auto;
-        height: 100%;
-        width:100%;
-        .projectsContent {
-          display: flex;
-          flex-wrap: wrap;
-          width:75%;
-          margin:0 auto;
-          .projectSingle {
-            background: $projectBoxColor;
-            border:1px solid #5d5d5d;
-            padding:25px;
-            width:calc(50% - 10px);
-            margin:15px 5px;
-            color:$default_color;
-            @include respond-below(md){
-              width:calc(50% - 10px);
-            }
-            .projectTitle {
-              a {
-                color : #f1e05a;
-                text-decoration: none;
-                font-weight: 500;
-                &:hover {
-                  text-decoration: underline;
-                }
-              }
-            }
-            .projectDescription {
-              margin:20px 0 40px 0;
-              font-size: 15px;
-              font-weight: 300;
-            }
-            .projectTech {
-              display: flex;
-              justify-content: flex-start;
-              align-items: center;
-              .projectColor {
-                display: inline-block;
-                width:15px;
-                height: 15px;
-                border-radius: 50%;
-                &.purple {
-                  background:#563D7C;
-                }
-                &.orange {
-                  background:#F16529;
-                }
-                &.yellow {
-                  background: #F1E05A;
-                }
-
-              }
-              .projectLang{
-                margin-left:5px;
-                font-size:14px;
-              }
-            }
-          }
-        }
       }
       .personel {
         display: none;
