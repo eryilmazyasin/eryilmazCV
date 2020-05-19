@@ -120,41 +120,76 @@
           flex-wrap: wrap;
           width:75%;
           margin:25px 0 0 0;
+          justify-content: center;
           @include respond-below(lg){
             width:90%;
           }
-          .infoBoxes {
-            border: 3px solid $default_color;
-            min-width: calc(25% - 10px);
-            text-align: center;
-            margin: 0 5px;
-            color:$default_color;
-            text-decoration: none;
-            font-size:1vw;
-            font-weight: 400;
-            letter-spacing: 10px;
-            transition: font-weight, font-size ease .5s;
-            padding:25px 0;
+          ul {
+            padding:0;
+            margin:0;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            &.activeLink {
-              background:red;
-            }
-            &:hover {
-              background: url(../images/boxesBackground.png) no-repeat center center;
-              background-size: cover;
-              font-weight: bold;
-            }
+            flex-direction: row;
+            justify-content: flex-start;
+            border-bottom:1px solid $default_color;
+            width:100%;
             @include respond-below(md){
-              border-width:1px;
-              letter-spacing: 5px;
+              justify-content: center;
             }
-            @include respond-below(sm){
-              margin: 5px;
-              font-size: 14px;
-              padding: 10px 0;
-              min-width: calc(50% - 10px);
+            li {
+              list-style: none;
+              margin-right: 25px;
+              position: relative;
+              &.active-li {
+                &:after {
+                  content: "";
+                  position: absolute;
+                  bottom: -1.5px;
+                  left: 0;
+                  width: 100%;
+                  height: 3px;
+                  background: #f1e05a;
+                }
+              }
+              &:last-child {
+                margin-right: 0;
+              }
+              a {
+                color : $default_color;
+                text-decoration: none;
+                display: flex;
+                padding:15px;
+                @include respond-below(md){
+                  padding:7px;
+                }
+
+              }
+              .projectsCount {
+                background: gray;
+                color: #fff;
+                border-radius: 50%;
+                display: inline-block;
+                font-size: 11px;
+                margin-left: 5px;
+                padding: 5px 8px;
+                font-family: sans-serif;
+                @include respond-below(md){
+                  padding:0 5px;
+                }
+              }
+              &:hover {
+                  &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: -1.5px;
+                    left: 0;
+                    width: 100%;
+                    height: 3px;
+                    background: #f1e05a;
+                }
+              }
+              @include respond-below(md){
+                font-size:12px;
+              }
             }
           }
           }
@@ -170,68 +205,57 @@
         .projectsContent {
           display: flex;
           flex-wrap: wrap;
-          width:100%;
-          padding:15px;
+          width:75%;
+          margin:0 auto;
           .projectSingle {
-            width:calc(25% - 10px);
+            background: $projectBoxColor;
+            border:1px solid #5d5d5d;
+            padding:25px;
+            width:calc(50% - 10px);
             margin:15px 5px;
-            @include respond-below(1200px){
-              width:calc(33.333% - 10px);
-            }
+            color:$default_color;
             @include respond-below(md){
               width:calc(50% - 10px);
             }
-            .singleImage {
-              position: relative;
-              overflow: hidden;
-              .visitWebsite {
-                background: #000000a6;
-                position: absolute;
-                width: 100%;
-                top: 0;
-                height: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                opacity:0;
-                transition:all cubic-bezier(0, 0.99, 0.58, 1) .5s;
-                a {
-                  color: #fff;
-                  text-decoration: none;
-                  font-weight: 500;
-                  font-size: 14px;
-                  background: #281c3c;
-                  padding: 15px 35px;
-                  border-radius: 20px;
-                  letter-spacing: 5px;
-                  border:2px solid #d0d0d0;
-                  transition: transform ease .5s;
-                  @include respond-below(1400px){
-                    padding: 10px 25px;
-                    font-size:10px;
-                  }
-                  @include respond-below(md){
-                    padding: 10px 25px;
-                    font-size:10px;
-                  }
-                  &:hover {
-                    transform: translateY(-5px);
-                  }
+            .projectTitle {
+              a {
+                color : #f1e05a;
+                text-decoration: none;
+                font-weight: 500;
+                &:hover {
+                  text-decoration: underline;
                 }
               }
-              &:hover {
-                .visitWebsite {
-                  height: 100%;
-                  opacity:1;
+            }
+            .projectDescription {
+              margin:20px 0 40px 0;
+              font-size: 15px;
+              font-weight: 300;
+            }
+            .projectTech {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              .projectColor {
+                display: inline-block;
+                width:15px;
+                height: 15px;
+                border-radius: 50%;
+                &.purple {
+                  background:#563D7C;
+                }
+                &.orange {
+                  background:#F16529;
+                }
+                &.yellow {
+                  background: #F1E05A;
                 }
 
               }
-            }
-            .projectTitle {
-              text-align: center;
-              font-size: 18px;
-              text-transform: uppercase;
-              margin: 10px 0 0 0;
+              .projectLang{
+                margin-left:5px;
+                font-size:14px;
+              }
             }
           }
         }

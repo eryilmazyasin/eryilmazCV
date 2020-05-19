@@ -1,8 +1,7 @@
 $(function () {
-
+    projectCount();
 
     var linkclickable = true;
-
     $('.infoBoxes').on('click', function (e) {
         e.preventDefault();
         if(linkclickable){
@@ -16,7 +15,31 @@ $(function () {
                 });
             });
         }
+    });
 
-    })
 
-})
+    $('.infoBoxesWrapper li').on( 'click', function() {
+        //set time out ver
+        $(this).parent().find( 'li.active-li' ).removeClass( 'active-li' );
+        $( this ).addClass( 'active-li' );
+    });
+
+
+
+
+});
+
+
+
+
+// ProjectSingle componenti kadarını nav'a bas
+function projectCount() {
+    var projectCounts = $('.projectsContent .projectSingle').length;
+    if(projectCounts > 0) {
+        $('span.projectsCount').text(projectCounts);
+    }
+    else {
+        $('span.projectsCount').hide();
+    }
+}
+
