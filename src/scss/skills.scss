@@ -19,16 +19,20 @@
           flex-direction: row;
           justify-content: space-between;
           margin-bottom: 5px;
+          .skillTitle {
+            font-weight: 700;
+          }
+          .skillExperience {
+            font-weight: 300;
+          }
         }
         .skillBar {
           width: 100%;
-          background: gray;
+          background: $default_color;
           height: 10px;
           border-radius: 5px;
           overflow: hidden;
           .skillColor {
-            background: red;
-            width: 85%;
             height: inherit;
           }
         }
