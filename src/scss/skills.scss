@@ -1,0 +1,38 @@
+.skills {
+  display: none;
+  overflow-y: auto;
+  height: 100%;
+  width:100%;
+  .skillsContent {
+    .skillsInner {
+      width: 30%;
+      @include respond-below(md){
+        width: 100%;
+      }
+      .skillItem {
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom:25px;
+        .skillProps {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 5px;
+        }
+        .skillBar {
+          width: 100%;
+          background: gray;
+          height: 10px;
+          border-radius: 5px;
+          overflow: hidden;
+          .skillColor {
+            background: red;
+            width: 85%;
+            height: inherit;
+          }
+        }
+      }
+    }
+  }
+}
