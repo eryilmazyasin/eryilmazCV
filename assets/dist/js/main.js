@@ -7,9 +7,9 @@ $(function () {
         if(linkclickable){
             linkclickable = false;
             var page_id = $(this).attr('data-name');
-            $('.profileSummary').find('.active').slideUp(450, function () {
+            $('.profileSummary').find('.active').slideUp(250, function () {
                 $('.profileSummary').find('.active').removeClass('active');
-                $('.' + page_id).slideDown(450, function () {
+                $('.' + page_id).slideDown(250, function () {
                    $('.' + page_id).addClass('active');
                     linkclickable = true;
                 });
@@ -48,6 +48,7 @@ $(function () {
             setTimeout(typeWriter, speed);
         }
     }
+
 
 
     //fUNCTİONS
