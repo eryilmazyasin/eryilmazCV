@@ -200,8 +200,30 @@
         }
       .about {
         display: block;
+        width:100%;
+        .aboutText {
+          .typedText {
+            font-size:5rem;
+            font-weight:300;
+            @include respond-below(sm){
+              font-size:2rem;
+            }
+          } 
+          .aboutTextDesc {
+            opacity: 0;
+            font-size:5rem;
+            font-weight: 600;
+            @include respond-below(sm){
+              font-size:2rem;
+            }
+          }  
+        }
+        
+
       }
 
       }
     }
   }
+
+  

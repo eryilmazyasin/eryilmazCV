@@ -38,7 +38,7 @@ $(function () {
     }
 
     var i = 0;
-    var txt = 'Merhaba,'; /* The text */
+    var txt = 'Merhaba, ben Yasin.'; /* The text */
     var speed = 50; /* The speed/duration of the effect in milliseconds */
 
     function typeWriter() {
@@ -46,6 +46,24 @@ $(function () {
             $('.typedText').append(txt.charAt(i));
             i++;
             setTimeout(typeWriter, speed);
+            
+        }
+        setTimeout(function() {
+            $('.aboutTextDesc').animate({
+                opacity: 1
+            })
+        }, 1200)
+        
+    }
+
+    function calculateHeight() {
+        let height = $('body').height() - $('.leftSide').innerHeight();
+        console.log(height)
+
+        
+        if($(window).width() < 767){
+           $('.about').css('height', height)
+    
         }
     }
 
@@ -54,6 +72,7 @@ $(function () {
     //fUNCTİONS
     projectCount();
     typeWriter();
+    calculateHeight();
 });
 
 
