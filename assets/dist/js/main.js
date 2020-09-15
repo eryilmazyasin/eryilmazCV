@@ -73,7 +73,7 @@ function calculateHeight() {
 }
 
 
-function getGithubRepo() {
+/*function getGithubRepo() {
     $.ajax({
         method: "GET",
         url: "https://api.github.com/users/eryilmazyasin/repos"
@@ -91,7 +91,7 @@ function getGithubRepo() {
         .fail(function(){
             console.log("uh oh it failed");
         });
-}
+}*/
 
 
 
