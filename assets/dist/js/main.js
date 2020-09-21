@@ -73,7 +73,7 @@ function calculateHeight() {
 }
 
 
-/*function getGithubRepo() {
+function getGithubRepo() {
     $.ajax({
         method: "GET",
         url: "https://api.github.com/users/eryilmazyasin/repos"
@@ -81,17 +81,16 @@ function calculateHeight() {
         .done(function(data){
             var ul = document.getElementById('repoUl');
             data.map( repo => {
+                var template = `<a href="${repo.html_url}" target="_blank">${repo.name}</a>`;
                 var li = document.createElement('li');
-                var a = document.createElement('a');
-                li.appendChild(a);
-                a.appendChild(document.createTextNode(repo.name));
-                ul.appendChild(li);
+                li.innerHTML = template;
+                ul.append(li);
             })
         })
         .fail(function(){
             console.log("uh oh it failed");
         });
-}*/
+}
 
 
 

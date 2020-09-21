@@ -4,11 +4,14 @@
   height: 100%;
   width:100%;
   .skillsContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:50px;
+    @include respond-below(sm){
+      grid-template-columns: 1fr;
+    }
     .skillsInner {
-      width: 30%;
-      @include respond-below(md){
-        width: 100%;
-      }
+      width: 100%;
       .skillItem {
         width:100%;
         display: flex;
@@ -35,6 +38,17 @@
           overflow: hidden;
           .skillColor {
             height: inherit;
+          }
+        }
+      }
+    }
+    .githubRepos {
+      #repoUl {
+        padding:0;
+        li {
+          list-style: none;
+          a {
+            color:$default_color;
           }
         }
       }
